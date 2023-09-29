@@ -1,0 +1,23 @@
+Create React App
+- 복잡한 설정 없이 리액트 앱을 만들어 주는 라이브러리
+명령어 : npx create-react-app .(.은 현재 폴더에 설치하겠다는 의미)
+- npx : 노트 패키지 실행(최신 버전의 라이브러리를 실행시켜주는 역할)
+
+node_modules : 외부라이브러리 설치 경로 (삭제하여도, package.json과 lock.json 있을 경우  npm install로 재생성)
+public : 리액트에서 공통적으로 사용하는 폰트 파일, 이미지 파일등을 저장
+src : 소스 폴더라는 뜻으로 프로그래밍 소스를 저장하는 폴더
+
+* create-react-app로 만든 리액트 앱에서는 웹 서버가 내장이 되어있다.
+  : 리액트앱의 기본 포트번호는 3000번
+
+※ 리액트 앱의 동작 원리
+1. localhost:3000으로 접속을 요청하면 public 폴더의 index.html을 반환한다.
+2. index.html은 src 폴더의 index.js와 해당 파일이 가져오는 자바스크립트 파일으 한데 묶어 놓은 bundle.js를 불러온다.
+   <script> 태그에서 자동으로 추가한다.
+3. bundle.js가 실행되어 index.js에서 작성한 코드가 실행된다.
+4. index.js는 ReactDom.createRoot 메서드로 돔에서 리액트 앱의 루트가 될 수 있는 요소를 지정한다.
+   * const root = ReactDOM.createRoot(document.getElementById('root'));
+     - document.getElementById('root')는 index.html에 지정되어있는 id="root" 태그를 가져온다.
+     - ReactDOM.createRoot는 인수로 전달한 요소를 리액트 앱의 루트로 만들어 반환하는 메서드이다.
+5. render 메서드를 사용해 돔의 루트 아래에 자식 컴포넌트를 추가한다.
+   결과적으로 App컴포넌트가 렌더링 된다.
