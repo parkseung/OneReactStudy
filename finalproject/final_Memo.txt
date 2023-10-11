@@ -1,0 +1,36 @@
+페이지 라우팅
+- 경로를 지정하는 과정
+- 데이터 전달을 목적으로 최적의 경로를 찾아 데이터를 전송하는 과정
+- 요청에 따라 적절한 페이지를 반환하는 일련의 과정
+  (URL 요청 경로에 맞게 적절한 페이지를 보여주는 과정)
+
+서버 사이드 렌더링 / 클라이언트 사이드 렌더링
+https://adjh54.tistory.com/53
+
+리액트 라우터
+- 페이지 라우팅 전용 라이브러리
+- 설치 : npm i react-router-dom (웹용)
+        (모바일용은 npm i react-router-native)
+
+예제)
+<Routes>
+  <Route path= "/" element=<{<Home />}>
+</Routes>  
+- Routes가 Switch문, Route가 case라고 생각하면 이해하기가 쉽다.
+- Route에서의 path는 접근경로, element는 컴포넌트로 생각하면 된다.
+
+Link 컴포넌트
+- HTML의 <a>태그와 비슷한 개념이며, 페이지 이동시 사용
+  ex. <Link to='이동할 경로'>링크 이름</Link>
+
+* 동적 경로로 라우팅하기
+1. URL 파라미터
+   - ex. https://localhost:3000/diary/{id}
+   - <Route path= "/diary/:id" element=<{<Home />}>
+   - 경로에서 파라미터 받으려면 useParams() Hook 사용하여 받아온다.
+2. 쿼리 스트링
+   - ex. https://localhost:3000/diary?id=3
+   - id=3과 같이 key와 value형태로 들어가 있으며, 추가적인 파라미터 넣을시 &로 구분한다.
+   - useSearchParams() Hook을 사용하여 파라미터를 받는다.
+     -> 배열형태로 , useState처럼 [조회객체(조회객체.get("파라미터명")), 업데이트함수]  
+
