@@ -34,3 +34,7 @@ Link 컴포넌트
    - useSearchParams() Hook을 사용하여 파라미터를 받는다.
      -> 배열형태로 , useState처럼 [조회객체(조회객체.get("파라미터명")), 업데이트함수]  
 
+useNavigate
+- 리액트 앱에서 뒤로가기 이벤트가 동작하려면 react-router-dom의 useNavigate 훅을 이용해야된다.
+ex. const navigate = useNavigate(); 
+    navigate(-1) : 뒤로가기 이벤트 실행됨
